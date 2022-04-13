@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsLib", "ModelsLib\Mode
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightApiService", "FlightApiService\FlightApiService.csproj", "{EEF25279-FEA3-41FF-9C80-825C0CA210E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassengerApiService", "ClientApiService\PassengerApiService.csproj", "{8E85CBD3-399A-463D-89A7-15D7599F6F66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassengerApiService", "PassengerApiService\PassengerApiService.csproj", "{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +59,10 @@ Global
 		{EEF25279-FEA3-41FF-9C80-825C0CA210E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEF25279-FEA3-41FF-9C80-825C0CA210E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEF25279-FEA3-41FF-9C80-825C0CA210E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E85CBD3-399A-463D-89A7-15D7599F6F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E85CBD3-399A-463D-89A7-15D7599F6F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E85CBD3-399A-463D-89A7-15D7599F6F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E85CBD3-399A-463D-89A7-15D7599F6F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
