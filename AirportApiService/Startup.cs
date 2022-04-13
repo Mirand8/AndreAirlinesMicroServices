@@ -1,6 +1,4 @@
-using LogApiService.Services;
-using LogApiService.Utils;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -8,14 +6,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using AirportApiService.Data;
 
-namespace LogApiService
+namespace AirportApiService
 {
     public class Startup
     {
@@ -33,16 +32,11 @@ namespace LogApiService
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LogApiService", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AirportApiService", Version = "v1" });
             });
 
-            services.Configure<LogApiServiceSettings>(
-                Configuration.GetSection(nameof(LogApiService))
-                );
-            services.AddSingleton<ILogApiServiceSettings>(
-                sp => sp.GetRequiredService<IOptions<LogApiServiceSettings>>().Value
-                );
-            services.AddSingleton<LogService>();
+            services.AddDbContext<AirportApiServiceContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("AirportApiServiceContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +46,7 @@ namespace LogApiService
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LogApiService v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AirportApiService v1"));
             }
 
             app.UseHttpsRedirection();

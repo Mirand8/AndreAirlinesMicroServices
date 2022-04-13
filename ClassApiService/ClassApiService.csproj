@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ModelsLib\ModelsLib.csproj" />
+    <ProjectReference Include="..\ModelsLib\ModelsLib.csproj" />
   </ItemGroup>
 
 </Project>

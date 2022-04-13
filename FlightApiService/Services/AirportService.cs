@@ -1,8 +1,9 @@
-﻿using ModelsLib;
+﻿
+using ModelsLib;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace BasePriceApiService.Services
+namespace FlightApiService.Services
 {
     public class AirportService
     {

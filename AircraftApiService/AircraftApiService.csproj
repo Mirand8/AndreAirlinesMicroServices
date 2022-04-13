@@ -6,11 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ModelsLib\ModelsLib.csproj" />
+    <ProjectReference Include="..\ModelsLib\ModelsLib.csproj" />
   </ItemGroup>
 
 </Project>

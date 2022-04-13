@@ -1,5 +1,5 @@
-using LogApiService.Services;
-using LogApiService.Utils;
+using FlightApiService.Services;
+using FlightApiService.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LogApiService
+namespace FlightApiService
 {
     public class Startup
     {
@@ -33,16 +33,16 @@ namespace LogApiService
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LogApiService", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FlightApiService", Version = "v1" });
             });
 
-            services.Configure<LogApiServiceSettings>(
-                Configuration.GetSection(nameof(LogApiService))
+            services.Configure<FlightApiServiceSettings>(
+                Configuration.GetSection(nameof(FlightApiService))
                 );
-            services.AddSingleton<ILogApiServiceSettings>(
-                sp => sp.GetRequiredService<IOptions<LogApiServiceSettings>>().Value
+            services.AddSingleton<IFlightApiServiceSettings>(
+                sp => sp.GetRequiredService<IOptions<FlightApiServiceSettings>>().Value
                 );
-            services.AddSingleton<LogService>();
+            services.AddSingleton<FlightService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +52,7 @@ namespace LogApiService
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "LogApiService v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FlightApiService v1"));
             }
 
             app.UseHttpsRedirection();
