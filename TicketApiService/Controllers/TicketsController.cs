@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ModelsLib;
 using ModelsLib.DataValidations;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TicketApiService.Services;
 
@@ -17,6 +18,10 @@ namespace TicketApiService.Controllers
         {
             _ticketsService = ticketService;
         }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Ticket>>> Get() =>
+            await _ticketsService.GetTickets();
 
         [HttpGet("{id}", Name = "GetTicket")]
         public async Task<ActionResult<Ticket>> Get(string id)
@@ -41,9 +46,21 @@ namespace TicketApiService.Controllers
             if (flight == null) return BadRequest("Voo não encontrado");
             if (await _ticketsService.GetTicket(ticket.Id) == null) return BadRequest("A passagem ja existe!");
 
+            ticket.RegisterDate = System.DateTime.Now.Date;
             ticket.Passenger =  passenger;
             ticket.Class =  @class;
             ticket.Flight = flight;
+
+            var basePrice = new BasePrice
+            {
+                Origin = ticket.Flight.Origin,
+                Destination = ticket.Flight.Destination,
+                InclusionDate = ticket.RegisterDate
+            };
+            basePrice.CalculatePrice(ticket.PromotionPercentage);
+            await BasePriceService.CreateBasePrice(basePrice);
+            ticket.Price = basePrice.Price;
+            ticket.BasePrice = basePrice;
 
             _ticketsService.CreateTicket(ticket);
             return Ok(ticket);

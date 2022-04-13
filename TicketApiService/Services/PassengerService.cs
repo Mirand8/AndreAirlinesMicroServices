@@ -11,7 +11,7 @@ namespace TicketApiService.Services
 
         public async static Task<Passenger> GetPassenger(string cpf)
         {
-            var response = await _client.GetAsync($"https://localhost:44365/api/Passengers/{cpf}");
+            var response = await _client.GetAsync($"https://localhost:44365/api/Passenger/{cpf}");
             if (!response.IsSuccessStatusCode) return null;
             var responseBody = await response.Content.ReadAsStringAsync();
             return ExtractPassengerJsonData(responseBody);

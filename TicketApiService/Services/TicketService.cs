@@ -11,7 +11,7 @@ namespace TicketApiService.Services
     {
         readonly IMongoCollection<Ticket> _tickets;
 
-        public TicketService(TicketApiServiceSettings settings)
+        public TicketService(ITicketApiServiceSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var dataBase = client.GetDatabase(settings.DatabaseName);
