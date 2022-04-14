@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasePriceApiService", "Base
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassApiService", "ClassApiService\ClassApiService.csproj", "{FD55117E-46E7-4F08-A1B9-8DDA7E3A2A68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogApiService", "LogApiService\LogApiService.csproj", "{F4F50928-FA0A-4593-AF79-647F0967711D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogApiService", "LogApiService\LogApiService.csproj", "{F4F50928-FA0A-4593-AF79-647F0967711D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportApiService", "AirportApiService\AirportApiService.csproj", "{4294A0FE-5156-4FE5-A5DF-EAB138FD39F6}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightApiService", "FlightApiService\FlightApiService.csproj", "{EEF25279-FEA3-41FF-9C80-825C0CA210E6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassengerApiService", "PassengerApiService\PassengerApiService.csproj", "{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserApiService", "UserApiService\UserApiService.csproj", "{15E77316-C89E-4080-A4B9-33AEE8C7158B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB304416-12AE-45CB-AC2A-8DD9B0619E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15E77316-C89E-4080-A4B9-33AEE8C7158B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15E77316-C89E-4080-A4B9-33AEE8C7158B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15E77316-C89E-4080-A4B9-33AEE8C7158B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15E77316-C89E-4080-A4B9-33AEE8C7158B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
